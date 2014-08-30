@@ -1,6 +1,6 @@
 __author__ = 'christian'
 from numpy import*
-
+from numbers import Number
 
 def circle_area(radius):
     """
@@ -76,11 +76,15 @@ def rectangle_area(length, breadth):
     return length*breadth
 print(rectangle_area(12, 10))
 
-def sphere_area(radius):
-    """
 
-    :param radius:
-    :return:
+def sphere_area(radius: Number) -> Number:
+    """
+    Calculate sphere area.
+    @param radius: sphere radius
+    @return: sphere volume (in units of radius ^3)
+
+    >>> sphere_area(7)
+    132
     """
     return 4*pi*radius**2
 print(sphere_area(7))
