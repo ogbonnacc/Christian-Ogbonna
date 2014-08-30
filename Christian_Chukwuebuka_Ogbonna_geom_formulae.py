@@ -121,6 +121,21 @@ def square_pyramid_surface_area(length, height: Number) -> Number:
     """
     return length**2+2*length*height
 
+def segment_area(radius, breadth, height, theta1, theta2):
+    """
+
+    :param radius: length of one side of sector
+    :param breadth: base of triangle
+    :param height: height of triangle
+    :param theta1: angle of sector
+    :param theta2: angle of triangle
+    :return:segment area in units^2
+    segment_area(10, 12, 8, np.pi/4, np.pi/4)
+    5.239
+    """
+
+    return ((theta1/360)*np.pi*radius**2) - (0.5*breadth*height*np.sin(theta2))
+
 
 if __name__ == "__main__":
     sampleLength = 6
@@ -128,6 +143,8 @@ if __name__ == "__main__":
     sampleWidth = 4
     sampleHeight = 8
     sampleBreadth = 12
+    sampleTheta1 = np.pi/4
+    sampleTheta2 = np.pi/4
     print("area:", rectangle_area(sampleLength, sampleBreadth))
     print("area:", sphere_area(sampleRadius))
     print("area:", circle_area(sampleRadius))
@@ -138,6 +155,7 @@ if __name__ == "__main__":
     print("area:", trapezium_area(sampleLength, sampleWidth, sampleHeight))
     print("surface_area:", cuboid_surface_area(sampleLength, sampleWidth, sampleHeight))
     print("surface_area:", square_pyramid_surface_area(sampleLength, sampleHeight))
+    print("area:",  segment_area(sampleRadius, sampleBreadth, sampleHeight, sampleTheta1, sampleTheta2,))
 
 
 
