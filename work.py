@@ -112,21 +112,21 @@ if __name__ == "__main__":
     print("surface_area:", cube_surface_area(sampleHeight))
 
 
-def trapezium_area(length, breadth, height: Number) -> Number:
+def trapezium_area(length, width, height: Number) -> Number:
     """
     calculate area of trapezium from the length, breadth and height
     :param length:length of trapezium
-    :param breadth:breadth of trapezium
+    :param width:width of trapezium
     :param height: height of trapezium
     :return: area of trapezium in units^2
     >>>trapezium_area(12,8,6)
     60.0
     """
-    return 0.5*(length + breadth)*height
+    return 0.5*(length + width)*height
 
 if __name__ == "__main__":
-    sampleLength, Breadth, Height = (4, 9, 12)
-    print("area:", trapezium_area(sampleLength, Breadth, Height))
+    sampleLength, Width, Height = (4, 9, 12)
+    print("area:", trapezium_area(sampleLength, Width, Height))
 
 
 def cuboid_surface_area(length, width, height):

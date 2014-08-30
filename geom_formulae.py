@@ -1,117 +1,134 @@
 __author__ = 'christian'
-from numpy import*
 from numbers import Number
+import numpy as np
 
-def circle_area(radius):
+
+def rectangle_area(length, breadth: Number) -> Number:
     """
-
-    :param radius:
-    :return:
-    """
-    return pi*radius**2
-print(circle_area(2))
-
-
-def triangle_area(base, height):
-    """
-
-    :param base:
-    :param height:
-    :return:
-    """
-    return 0.5*base*height
-print(triangle_area(10, 12))
-
-def cuboid_surface_area(length, width, height):
-    """
-
-    :param length:
-    :param width:
-    :param height:
-    :return:
-    """
-    return 2*(length*width+length*height+width*height)
-print(cuboid_surface_area(4, 5, 6))
-
-
-
-def semicircle_perimeter(radius):
-    """
-
-    :param radius:
-    :return:
-    """
-    return pi*radius
-print(semicircle_perimeter(7))
-
-
-
-def cylinder_volume(radius, height):
-    """
-
-    :param radius:
-    :param height:
-    :return:
-    """
-    return pi*radius**2*height
-print(cylinder_volume(3.5, 2))
-
-
-def cube_surface_area(height):
-
-    """
-    :param height:
-    :return:
-    """
-    return 6*height**2
-print(cube_surface_area(10))
-
-def rectangle_area(length, breadth):
-    """
-
-    :param length:
-    :param breadth:
-    :return:
+    calculate area of rectangle from side length and side breadth.
+    :param length: the side length
+    :param breadth: the side breadth
+    :return: the area (units^2 from length and breadth)
+    rectangle_area (6,4)
+    24
     """
     return length*breadth
-print(rectangle_area(12, 10))
 
 
 def sphere_area(radius: Number) -> Number:
-    """
-    Calculate sphere area.
-    @param radius: sphere radius
-    @return: sphere volume (in units of radius ^3)
+        """
+        Calculate sphere area from radius
+        @param radius: sphere radius
+        @return: sphere area (in units of radius ^2)
 
-    >>> sphere_area(7)
+        >>> sphere_area(7)
+        132
+        """
+        return 4*np.pi*radius**2
+
+
+def circle_area(radius: Number) -> Number:
+    """
+    calculate circle area from radius
+    :param radius: circle radius
+    :return: circle area (in units of radius^2)
+    >>>circle_area(7)
+    154
+    """
+    return np.pi*radius**2
+
+
+def triangle_area(breadth, height: Number) -> Number:
+    """
+    calculate triangle area from base and height
+    :param breadth: the side breadth
+    :param height: the side height
+    :return:triangle area(units^2 from base and height)
+    >>>triangle_area(2,1)
+    1
+    """
+    return 0.5*breadth*height
+
+
+def semicircle_perimeter(radius: Number) -> Number:
+    """
+    calculate semicircle area from radius
+    :param radius: semicircle radius
+    :return:semicircle  area( in units of radius)
+    >>>semicircle_area (7)
+    22
+    """
+    return np.pi*radius
+
+
+def cylinder_volume(radius, height: Number) -> Number:
+    """
+    calculate cylinder volume from radius and height
+    :param radius: cylinder radius
+    :param height: cylinder height
+    :return: volume of cylinder in units of (radius, height)^3
+    >>>cylinder_volume (3.5,2)
+    77
+    """
+    return np.pi*radius**2*height
+
+
+def cube_surface_area(length: Number) -> Number:
+    """
+    calculate surface area of a cube
+    :param length: length of cube
+    :return:surface area of cube in units of height^2
+    >>>cube_surface_area(10)
+    600
+    """
+    return 6*length**2
+
+
+def trapezium_area(length, width, height: Number) -> Number:
+    """
+    calculate area of trapezium from the length, breadth and height
+    :param length:length of trapezium
+    :param width:width of trapezium
+    :param height: height of trapezium
+    :return: area of trapezium in units^2
+    >>>trapezium_area(12,8,6)
+    60.0
+    """
+    return 0.5*(length + width)*height
+
+
+def cuboid_surface_area(length, width, height):
+    """
+     calculate the surface area of a cuboid
+    :param length:length of cuboid
+    :param width: width of cuboid
+    :param height: height of cuboid
+    :return: surface area of cuboid in units^2
+    >>>cuboid_surface_area(4,5,6)
+    148
+    """
+    return 2*(length*width+length*height+width*height)
+
+
+def square_pyramid_surface_area(length, height: Number) -> Number:
+    """
+    calculate surface_area of square based pyramid
+    :param length: length of base
+    :param height: height of pyramid
+    :return: surface_area of square_based_pyramid
+    >>>square_pyramid_surface_area (6,8)
     132
     """
-    return 4*pi*radius**2
-print(sphere_area(7))
-
-
-def square_based_pyramid_surface_area(length, height):
-    """
-
-    :param length:
-    :param height:
-    :return:
-    """
     return length**2+2*length*height
-print(square_based_pyramid_surface_area(6, 8))
 
 
-def trapezium_area(length, breadth, height):
-    """
-
-    :param length:
-    :param breadth:
-    :param height:
-    :return:
-    """
-    return 0.5*(length+breadth)*height
-print(trapezium_area(12, 8, 6))
-
+if __name__ == "__main__":
+    sampleLength = 6
+    sampleRadius = 3
+    sampleWidth = 4
+    sampleHeight = 8
+    sampleBreadth = 12
+    print("area:", rectangle_area(sampleLength, sampleBreadth), "area:", sphere_area(sampleRadius), "area:", circle_area(sampleRadius), "area:", triangle_area(sampleBreadth, sampleHeight), "perimeter:", semicircle_perimeter(sampleRadius), "volume:", cylinder_volume(sampleRadius, sampleHeight), "surface_area:", cube_surface_area(sampleLength), "area:", trapezium_area(sampleLength, sampleWidth, sampleHeight), "surface_area:", cuboid_surface_area(sampleLength, sampleWidth, sampleHeight), "surface_area:", square_pyramid_surface_area(sampleLength, sampleHeight))
 
 
 
