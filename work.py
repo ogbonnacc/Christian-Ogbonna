@@ -1,6 +1,8 @@
 __author__ = 'christian'
 from numbers import Number
 import numpy as np
+
+
 def rectangle_area(length, breadth: Number) -> Number:
     """
     calculate area of rectangle from side length and side breadth.
@@ -13,9 +15,8 @@ def rectangle_area(length, breadth: Number) -> Number:
     return length*breadth
 
 
-
 if __name__ == "__main__":
-    sampleLength,Breadth = (10,11)
+    sampleLength, Breadth = (10, 11)
     print("area:", rectangle_area(sampleLength, Breadth))
 
 
@@ -34,6 +35,7 @@ if __name__ == "__main__":
     sampleRadius = 12
     print("area:", sphere_area(sampleRadius))
 
+
 def circle_area(radius: Number) -> Number:
     """
     calculate circle area from radius
@@ -49,7 +51,7 @@ if __name__ == "__main__":
     print("area:", circle_area(sampleRadius))
 
 
-def triangle_area (base, height: Number) -> Number:
+def triangle_area(base, height: Number) -> Number:
     """
     calculate triangle area from base and height
     :param base: the side base
@@ -61,10 +63,11 @@ def triangle_area (base, height: Number) -> Number:
     return 0.5*base*height
 
 if __name__ == "__main__":
-    sampleBase,Height = (6, 8)
-    print("area:", triangle_area(sampleBase,Height))
+    sampleBase, Height = (6, 8)
+    print("area:", triangle_area(sampleBase, Height))
 
-def semicircle_perimeter (radius: Number) -> Number:
+
+def semicircle_perimeter(radius: Number) -> Number:
     """
     calculate semicircle area from radius
     :param radius: semicircle radius
@@ -76,9 +79,10 @@ def semicircle_perimeter (radius: Number) -> Number:
 
 if __name__ == "__main__":
     sampleRadius = 12
-    print("area:", semicircle_perimeter(sampleRadius))
+    print("perimeter:", semicircle_perimeter(sampleRadius))
 
-def cylinder_volume (radius,height: Number) -> Number:
+
+def cylinder_volume(radius, height: Number) -> Number:
     """
     calculate cylinder volume from radius and height
     :param radius: cylinder radius
@@ -89,9 +93,9 @@ def cylinder_volume (radius,height: Number) -> Number:
     """
     return np.pi*radius**2*height
 
-if __name__== "__main__":
-    sampleRadius,Height = (3,8)
-    print("area:", cylinder_volume(sampleRadius,Height))
+if __name__ == "__main__":
+    sampleRadius, Height = (3, 8)
+    print("volume:", cylinder_volume(sampleRadius, Height))
 
 def cube_surface_area(height: Number) -> Number:
     """
@@ -105,7 +109,8 @@ def cube_surface_area(height: Number) -> Number:
 
 if __name__ == "__main__":
     sampleHeight = 12
-    print ("area:", cube_surface_area(sampleHeight))
+    print("surface_area:", cube_surface_area(sampleHeight))
+
 
 def trapezium_area(length, breadth, height: Number) -> Number:
     """
@@ -120,8 +125,9 @@ def trapezium_area(length, breadth, height: Number) -> Number:
     return 0.5*(length + breadth)*height
 
 if __name__ == "__main__":
-    sampleLenght,Breadth,Height =(4,9,12)
-    print ("area:", trapezium_area(sampleLenght,Breadth,Height))
+    sampleLength, Breadth, Height = (4, 9, 12)
+    print("area:", trapezium_area(sampleLength, Breadth, Height))
+
 
 def cuboid_surface_area(length, width, height):
     """
@@ -134,9 +140,10 @@ def cuboid_surface_area(length, width, height):
     148
     """
     return 2*(length*width+length*height+width*height)
-if __name__== "__main__":
-    sampleLength,Width,Height = (9, 12, 10)
-    print("surface_area of cuboid:",cuboid_surface_area(sampleLength, Width, Height))
+if __name__ == "__main__":
+    sampleLength, Width, Height = (9, 12, 10)
+    print("surface_area:", cuboid_surface_area(sampleLength, Width, Height))
+
 
 def square_based_pyramid_surface_area(length, height: Number) -> Number:
     """
@@ -152,7 +159,7 @@ def square_based_pyramid_surface_area(length, height: Number) -> Number:
 
 if __name__ == "__main__":
     sampleLength, Height = (9, 12)
-    print("square_based_pyramid_surface_area:", square_based_pyramid_surface_area(sampleLength, Height))
+    print("surface_area:", square_based_pyramid_surface_area(sampleLength, Height))
 
 
 
