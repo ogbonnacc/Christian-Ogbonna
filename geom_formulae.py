@@ -140,12 +140,12 @@ def segment_area(radius, breadth, height, theta1, theta2):
 def triangle_area(base=None, height=None, side_a=None, side_b=None, side_c=None):
     """
     I am to calculate area of triangle from two perspective
-    :param base: base of triangle
-    :param height: height of triangle
-    :param side_a:side_a of the triangle
-    :param side_b: side_b of the triangle
-    :param side_c: side_c of the triangle
-    :return:Area of triangle
+    @param base: base of triangle
+    @param height: height of triangle
+    @param side_a:side_a of the triangle
+    @param side_b: side_b of the triangle
+    @param side_c: side_c of the triangle
+    @return:Area of triangle
     >>>triangle_area(base=10, height=8)
     40
     For the second method the sum of any two side should be greater than the third.
