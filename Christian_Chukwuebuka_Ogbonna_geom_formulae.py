@@ -15,9 +15,9 @@ def rectangle_area(length, breadth: Number) -> Number:
     return length*breadth
 
 
-def sphere_area(radius: Number) -> Number:
+def sphere_surface_area(radius: Number) -> Number:
         """
-        Calculate sphere area from radius
+        Calculate surface  of sphere area from radius
         @param radius: sphere radius
         @return: sphere area (in units of radius ^2)
 
@@ -58,7 +58,7 @@ def semicircle_perimeter(radius: Number) -> Number:
     >>>semicircle_area (7)
     22
     """
-    return np.pi*radius
+    return np.pi*radius + 2*radius
 
 
 def cylinder_volume(radius, height: Number) -> Number:
@@ -137,6 +137,33 @@ def segment_area(radius, breadth, height, theta1, theta2):
     return ((theta1/360)*np.pi*radius**2) - (0.5*breadth*height*np.sin(theta2))
 
 
+def triangle_area(base=None, height=None, side_a=None, side_b=None, side_c=None):
+    """
+    I am to calculate area of triangle from two perspective
+    @param base: base of triangle
+    @param height: height of triangle
+    @param side_a:side_a of the triangle
+    @param side_b: side_b of the triangle
+    @param side_c: side_c of the triangle
+    @return:Area of triangle
+    >>>triangle_area(base=10, height=8)
+    40
+    For the second method the sum of any two side should be greater than the third.
+    >>>triangle_area(side_a=2,side_b=3,side_c=4)
+    2.9047
+    """
+    if (base is not None) & (height is not None):
+        return 0.5 * base * height
+    elif (side_a is not None) & (side_b is not None) & (side_c is not None):
+        if (side_a + side_b) > side_c & (side_b + side_c) > side_a & (side_a + side_c) > side_b:
+            s = (side_a + side_b + side_c) * 0.5
+            return (s*(s-side_a)*(s-side_b)*(s-side_c)) ** 0.5
+        else:
+            return"The sum of two sides must be greater than the third side of a triangle"
+    else:
+        return "no such triangle"
+
+
 if __name__ == "__main__":
     sampleLength = 6
     sampleRadius = 3
@@ -146,7 +173,7 @@ if __name__ == "__main__":
     sampleTheta1 = np.pi/4
     sampleTheta2 = np.pi/4
     print("area of rectangle:", rectangle_area(sampleLength, sampleBreadth))
-    print("area of sphere:", sphere_area(sampleRadius))
+    print("surface area of sphere:", sphere_surface_area(sampleRadius))
     print("area of circle:", circle_area(sampleRadius))
     print("area of triangle:", triangle_area(sampleBreadth, sampleHeight))
     print("perimeter of semi_circle:", semicircle_perimeter(sampleRadius))
@@ -156,6 +183,7 @@ if __name__ == "__main__":
     print("surface_area of cuboid:", cuboid_surface_area(sampleLength, sampleWidth, sampleHeight))
     print("surface_area of square_pyramid:", square_pyramid_surface_area(sampleLength, sampleHeight))
     print("area of segment:",  segment_area(sampleRadius, sampleBreadth, sampleHeight, sampleTheta1, sampleTheta2,))
+    print("area of triangle:", triangle_area(10))
 
 
 

@@ -183,7 +183,7 @@ if __name__ == "__main__":
     print("surface_area of cuboid:", cuboid_surface_area(sampleLength, sampleWidth, sampleHeight))
     print("surface_area of square_pyramid:", square_pyramid_surface_area(sampleLength, sampleHeight))
     print("area of segment:",  segment_area(sampleRadius, sampleBreadth, sampleHeight, sampleTheta1, sampleTheta2,))
-    print("area:", triangle_area(10))
+    print("area of triangle:", triangle_area(10))
 
 
 
