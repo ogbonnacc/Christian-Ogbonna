@@ -157,7 +157,7 @@ def triangle_area(base=None, height=None, side_a=None, side_b=None, side_c=None)
     elif (side_a is not None) & (side_b is not None) & (side_c is not None):
         if (side_a + side_b) > side_c & (side_b + side_c) > side_a & (side_a + side_c) > side_b:
             s = (side_a + side_b + side_c) * 0.5
-            return sqrt(s*(s-side_a)*(s-side_b)*(s-side_c))
+            return (s*(s-side_a)*(s-side_b)*(s-side_c)) ** 0.5
         else:
             return"The sum of two sides must be greater than the third side of a triangle"
     else:
