@@ -15,9 +15,9 @@ def rectangle_area(length, breadth: Number) -> Number:
     return length*breadth
 
 
-def sphere_area(radius: Number) -> Number:
+def sphere_surface_area(radius: Number) -> Number:
         """
-        Calculate sphere area from radius
+        Calculate surface  of sphere area from radius
         @param radius: sphere radius
         @return: sphere area (in units of radius ^2)
 
@@ -58,7 +58,7 @@ def semicircle_perimeter(radius: Number) -> Number:
     >>>semicircle_area (7)
     22
     """
-    return np.pi*radius
+    return np.pi*radius + 2*radius
 
 
 def cylinder_volume(radius, height: Number) -> Number:
@@ -146,7 +146,7 @@ if __name__ == "__main__":
     sampleTheta1 = np.pi/4
     sampleTheta2 = np.pi/4
     print("area of rectangle:", rectangle_area(sampleLength, sampleBreadth))
-    print("area of sphere:", sphere_area(sampleRadius))
+    print("surface area of sphere:", sphere_surface_area(sampleRadius))
     print("area of circle:", circle_area(sampleRadius))
     print("area of triangle:", triangle_area(sampleBreadth, sampleHeight))
     print("perimeter of semi_circle:", semicircle_perimeter(sampleRadius))
